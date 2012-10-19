@@ -2,7 +2,7 @@
 
 typedef std::list<unsigned int> intlist;
 
-intlist merge_lists(intlist *lists, unsigned int k) {
+intlist merge_lists(intlist lists[], unsigned int k) {
     intlist merged;
     
     do {
