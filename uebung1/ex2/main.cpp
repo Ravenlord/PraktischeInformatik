@@ -26,12 +26,10 @@ void test_heap_sort(){
   }
   h1.print();
   print_delimiter();
-  cout << "Descending sort with the heap sort algorithm\n" << "The sorted array contains: ";
-  unsigned* sorted = h1.heap_sort_desc();
-  cout << "| ";
-  for (unsigned i = 0; i < heap_size; i++) {
-    cout << sorted[i] << " | ";
-  }
+  cout << "Descending sort with the heap sort algorithm\n";
+  print_delimiter();
+  h1.heap_sort_desc();
+  print_delimiter();
   print_delimiter();
   // Ascending
   cout << "Constructing a heap with unsigned numbers 1...10\n";
@@ -40,13 +38,9 @@ void test_heap_sort(){
   }
   h1.print();
   print_delimiter();
-  cout << "Ascending sort with the heap sort algorithm\n" << "The sorted array contains: ";
-  sorted = h1.heap_sort_asc();
-  cout << "| ";
-  for (unsigned i = 0; i < heap_size; i++) {
-    cout << sorted[i] << " | ";
-  }
+  cout << "Ascending sort with the heap sort algorithm\n";
   print_delimiter();
+  h1.heap_sort_asc();
 }
 /*
  * 

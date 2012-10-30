@@ -9,6 +9,8 @@
 #ifndef HEAP_H
 #define	HEAP_H
 
+using namespace std;
+
 template <class T>
 class Heap {
 public:
@@ -16,7 +18,7 @@ public:
   static const int ERROR_CODE_TOP_ERROR = -1;
   static const int ERROR_CODE_PUSH_ERROR = -2;
   static const int ERROR_CODE_POP_ERROR = -3;
-  
+
   Heap<T>(unsigned n) : elements(0), size(n), data(new T[n]) {
   }
 
@@ -42,7 +44,7 @@ public:
     while (idx != 0) {
       unsigned pidx = parent_index(idx);
       if (data[pidx] < d)
-        std::swap(data[idx], data[pidx]);
+        swap(data[idx], data[pidx]);
       else break;
       idx = pidx;
 
@@ -50,7 +52,7 @@ public:
   }
 
   T pop() {
-    if(elements <= 0) throw ERROR_CODE_POP_ERROR;
+    if (elements <= 0) throw ERROR_CODE_POP_ERROR;
     T popped_element = data[0];
     data[0] = data[--elements];
     unsigned idx = 0;
@@ -63,45 +65,50 @@ public:
           max_idx++;
       }
       if (data[idx] < data[max_idx]) {
-        std::swap(data[idx], data[max_idx]);
+        swap(data[idx], data[max_idx]);
         idx = max_idx;
       } else break;
     } while (true);
     return popped_element;
   }
-  
+
   /*
    * Heap sort algorithm for descending order
    * truncates the heap
    */
-  T* heap_sort_desc(){
+  T* heap_sort_desc() {
     T* sorted_pointer = new T[elements];
     unsigned curr_size = elements;
-    for(unsigned i = 0; i < curr_size; i++){
+    for (unsigned i = 0; i < curr_size; i++) {
       sorted_pointer[i] = pop();
+      print();
+      cout << "The sort array contains:\t";
+      print_array(sorted_pointer, i + 1);
+      cout << "\n----------\n";
     }
     return sorted_pointer;
   }
-  
+
   /*
    * Heap sort algorithm for ascending order
    * truncates the heap
    */
-  T* heap_sort_asc(){
+  T* heap_sort_asc() {
     T* sorted_pointer = new T[elements];
     unsigned curr_size = elements;
-    for(int i = curr_size - 1; i >= 0; i--){
+    for (int i = curr_size - 1; i >= 0; i--) {
       sorted_pointer[i] = pop();
+      print();
+      cout << "The sort array contains:\t";
+      print_array(sorted_pointer, size, i);
+      cout << "\n----------\n";
     }
     return sorted_pointer;
   }
-  
-  void print() const{
-    std::cout << "The Heap contains:\n" << "| ";
-    for (int i = 0; i < elements; i++) {
-      std::cout << data[i] << " | ";
-    }
-    std::cout << "\n\n";
+
+  void print() {
+    cout << "The Heap contains:\t\t";
+    print_array(this->data, this->elements);
   }
 private:
   unsigned elements;
@@ -124,6 +131,22 @@ private:
     if (elements <= left_index(idx)) return 0;
     else if (elements > right_index(idx)) return 2;
     else return 1;
+  }
+
+  void print_array(T* arr, unsigned size) {
+    print_array(arr, size, 0);
+  }
+  
+  void print_array(T* arr, unsigned size, unsigned offset) {
+    cout << "| ";
+    if (size > 0) {
+        for (unsigned i = offset; i < size; i++) {
+          cout << arr[i] << " | ";
+        }
+    } else {
+      cout << "no elements |";
+    }
+    cout << "\n";
   }
 };
 
