@@ -11,7 +11,7 @@
 
 class StringContainer {
 public:
-  StringContainer() {}
+  StringContainer(): value("") {}
   StringContainer(std::string s): value(s){}
   virtual ~StringContainer(){}
   
