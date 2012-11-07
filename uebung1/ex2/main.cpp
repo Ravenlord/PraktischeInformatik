@@ -28,7 +28,9 @@ void test_heap_sort(){
   print_delimiter();
   cout << "Descending sort with the heap sort algorithm\n";
   print_delimiter();
-  h1.heap_sort_desc();
+  unsigned* sort_array_desc = h1.heap_sort_desc();
+  // The sorted array is not needed any more -> free memory
+  delete [] sort_array_desc;
   print_delimiter();
   print_delimiter();
   // Ascending
@@ -40,7 +42,9 @@ void test_heap_sort(){
   print_delimiter();
   cout << "Ascending sort with the heap sort algorithm\n";
   print_delimiter();
-  h1.heap_sort_asc();
+  unsigned* sort_array_asc = h1.heap_sort_asc();
+  // The sorted array is not needed any more -> free memory
+  delete [] sort_array_asc;
 }
 /*
  * 

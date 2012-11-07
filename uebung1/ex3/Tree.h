@@ -16,6 +16,10 @@ public:
   Tree() : root(0) {
   }
 
+  ~Tree() {
+    delete root;
+  }
+
   void insert(T d) {
     if (!root) root = new Node(d);
     else insert(root, d);
@@ -31,6 +35,7 @@ private:
 
   struct Node {
     Node(T d) : data(d), left(0), right(0) {}
+    ~Node(){ delete left; delete right; }
     T data;
     Node *left, *right;
   };

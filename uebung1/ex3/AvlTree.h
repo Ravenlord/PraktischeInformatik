@@ -17,6 +17,10 @@ public:
   AvlTree() : root(0) {
   }
 
+  ~AvlTree() {
+    delete root;
+  }
+
   void insert(T d) {
     if (!root) root = new AvlNode(d);
     else insert(root, d);
@@ -33,6 +37,7 @@ private:
 
     AvlNode(T d) : data(d), left(0), right(0) {
     }
+    ~AvlNode() { delete left; delete right; }
     T data;
     AvlNode *left, *right;
   };

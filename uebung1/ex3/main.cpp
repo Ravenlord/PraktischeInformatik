@@ -36,8 +36,9 @@ int main(int argc, char** argv) {
   cout << "Exercise 3: Trees\n";
   print_delimiter();
   for(unsigned i = 1; i <= 10; i++){
-    test_trees(10000*i);
+    test_trees(100*i);
     print_delimiter();
+    break;
   }
 
   return 0;
