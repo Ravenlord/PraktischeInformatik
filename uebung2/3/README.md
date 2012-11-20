@@ -1,4 +1,4 @@
-# Übung 2.3
+# Ãœbung 2.3
 
 ## Fragestellung
 
@@ -6,18 +6,18 @@ Wo wird Interprozesskommunikation praktisch eingesetzt? Und warum? Was sind die 
 
 ## Antwort
 
-* Interprozesskommunikation wird oft dazu verwendet, dass Software über ein Interface mit einer anderen Software kommunizieren kann. Praktische Beispiele umfassen Webserver & Datenbanken, oder Webserver & Programmiersprachen.
-* Die Programme sind in sich geschlossen und bieten über die zuvor genannten Interfaces die Möglichkeit an, Eingaben zu verarbeiten. Das aufrufende Programm erhält dann über das Interface die Rückgaben.
+* Interprozesskommunikation wird oft dazu verwendet, dass Software Ã¼ber ein Interface mit einer anderen Software kommunizieren kann. Praktische Beispiele umfassen Webserver & Datenbanken, oder Webserver & Programmiersprachen.
+* Die Programme sind in sich geschlossen und bieten Ã¼ber die zuvor genannten Interfaces die MÃ¶glichkeit an, Eingaben zu verarbeiten. Das aufrufende Programm erhÃ¤lt dann Ã¼ber das Interface die RÃ¼ckgaben.
 * Vorteile:
-    * Programme sind in sich geschlossen und spezifisch für eine Domäne, können jedoch durch die Interprozesskommunikation interagieren.
-    * Standardisierte Interfaces (Implementierungsunabhängig)
+    * Programme sind in sich geschlossen und spezifisch fÃ¼r eine DomÃ¤ne, kÃ¶nnen jedoch durch die Interprozesskommunikation interagieren.
+    * Standardisierte Interfaces (ImplementierungsunabhÃ¤ngig)
     * Erweiterbarkeit
     * Verteilung / Clustering
 
 ### Open-Source Anwendungsbeispiel
 
-Als Beispiel für Interprozesskommunikation haben wir Simple Common Gateway Interface (SimpleCGI, SCGI) gewählt. SCGI ist eine gemeinfreie Schnittstellenimplementierung worüber Applikationen mit einem HTTP-Server kommunizieren können. SCGI ist eine Weiterentwicklung von CGI und sehr ähnlich zu FastCGI. FastCGI ist komplex zu implementieren und deshalb wurde SCGI entwickelt. Es bietet weniger Möglichkeiten als FastCGI, jedoch wurde die Schnittstelle um Funktionalitäten erleichtert, die in der Regel nicht benötigt werden.
+Als Beispiel fÃ¼r Interprozesskommunikation haben wir Simple Common Gateway Interface (SimpleCGI, SCGI) gewÃ¤hlt. SCGI ist eine gemeinfreie Schnittstellenimplementierung worÃ¼ber Applikationen mit einem HTTP-Server kommunizieren kÃ¶nnen. SCGI ist eine Weiterentwicklung von CGI und sehr Ã¤hnlich zu FastCGI. FastCGI ist komplex zu implementieren und deshalb wurde SCGI entwickelt. Es bietet weniger MÃ¶glichkeiten als FastCGI, jedoch wurde die Schnittstelle um FunktionalitÃ¤ten erleichtert, die in der Regel nicht benÃ¶tigt werden.
 
-SCGI ist ein Prozess der am Computer läuft. Applikationen können eine Anfrage absetzen, diese muss einem vordefinierten Protokoll entsprechen, und erhalten von einer anderen SCGI-kompatiblen Applikation dann ihre Antwort (die Art der Antwort ist nicht spezifiziert).
+SCGI ist ein Prozess der am Computer lÃ¤uft. Applikationen kÃ¶nnen eine Anfrage absetzen, diese muss einem vordefinierten Protokoll entsprechen, und erhalten von einer anderen SCGI-kompatiblen Applikation dann ihre Antwort (die Art der Antwort ist nicht spezifiziert).
 
-SCGI verhält sich dabei wie ein Tunnel und es können immer nur zwei Applikationen direkt miteinander kommunizieren.
+SCGI verhÃ¤lt sich dabei wie ein Tunnel und es kÃ¶nnen immer nur zwei Applikationen direkt miteinander kommunizieren.
