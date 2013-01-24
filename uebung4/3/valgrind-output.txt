@@ -1,0 +1,76 @@
+==6562== Memcheck, a memory error detector
+==6562== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==6562== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==6562== Command: ./CircularBuffer 2
+==6562== 
+CircularBuffer constructed.
+Starting Write Test:
+--------------------------------------------------------------------------------
+Writing 0 to CircularBuffer.
+Writing 1 to CircularBuffer.
+Writing 2 to CircularBuffer.
+Writing 3 to CircularBuffer.
+Writing 4 to CircularBuffer.
+Writing 5 to CircularBuffer.
+Writing 6 to CircularBuffer.
+Writing 7 to CircularBuffer.
+Writing 8 to CircularBuffer.
+Writing 9 to CircularBuffer.
+--------------------------------------------------------------------------------
+
+CircularBuffer destroyed.
+CircularBuffer constructed.
+Starting Read Test:
+--------------------------------------------------------------------------------
+Reading 0 from CircularBuffer.
+Reading 1 from CircularBuffer.
+Reading 2 from CircularBuffer.
+Reading 3 from CircularBuffer.
+Reading 4 from CircularBuffer.
+Reading 5 from CircularBuffer.
+Reading 6 from CircularBuffer.
+Reading 7 from CircularBuffer.
+Reading 8 from CircularBuffer.
+Reading 9 from CircularBuffer.
+Reading value 2147483647 from empty CircularBuffer.
+--------------------------------------------------------------------------------
+
+CircularBuffer destroyed.
+CircularBuffer constructed.
+Starting Write Overflow Test:
+--------------------------------------------------------------------------------
+Writing 0 to CircularBuffer.
+Writing 1 to CircularBuffer.
+Writing 2 to CircularBuffer.
+Writing 3 to CircularBuffer.
+Writing 4 to CircularBuffer.
+Writing 5 to CircularBuffer.
+Writing 6 to CircularBuffer.
+Writing 7 to CircularBuffer.
+Writing 8 to CircularBuffer.
+Writing 9 to CircularBuffer.
+Writing 10 to CircularBuffer.
+Reading last value 1 from CircularBuffer.
+--------------------------------------------------------------------------------
+
+CircularBuffer destroyed.
+CircularBuffer constructed.
+Starting Read Empty Test:
+--------------------------------------------------------------------------------
+Reading value 2147483647 from newly created CircularBuffer instance.
+--------------------------------------------------------------------------------
+
+CircularBuffer destroyed.
+CircularBuffer constructed.
+CircularBuffer destroyed.
+CircularBuffer destroyed.
+CircularBuffer destroyed.
+==6562== 
+==6562== HEAP SUMMARY:
+==6562==     in use at exit: 0 bytes in 0 blocks
+==6562==   total heap usage: 19 allocs, 19 frees, 3,600 bytes allocated
+==6562== 
+==6562== All heap blocks were freed -- no leaks are possible
+==6562== 
+==6562== For counts of detected and suppressed errors, rerun with: -v
+==6562== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
